@@ -1,0 +1,229 @@
+/* ================= Overlay ================= */
+
+.overlay{
+
+	position:fixed;
+
+	inset:0;
+
+	background:rgba(0,0,0,.45);
+
+	backdrop-filter:blur(6px);
+	-webkit-backdrop-filter:blur(6px);
+
+	display:flex;
+
+	justify-content:center;
+
+	align-items:center;
+
+	padding:20px;
+
+	z-index:2500;
+
+	animation:fadeIn .3s ease;
+
+}
+
+/* ================= Modal ================= */
+
+.modal{
+
+	width:100%;
+
+	max-width:430px;
+
+	background:#ffffff;
+
+	border-radius:22px;
+
+	padding:35px 30px;
+
+	text-align:center;
+
+	border:1px solid rgba(249,180,3,.18);
+
+	box-shadow:0 25px 60px rgba(0,0,0,.20);
+
+	animation:popUp .35s ease;
+
+}
+
+/* ================= Icon ================= */
+
+.icon{
+
+	width:74px;
+	height:74px;
+
+	margin:0 auto 22px;
+
+	border-radius:50%;
+
+	display:flex;
+	justify-content:center;
+	align-items:center;
+
+	background:#fff2f2;
+
+	color:#dc3545;
+
+	font-size:30px;
+
+}
+
+/* ================= Title ================= */
+
+.modal h2{
+
+	margin:0;
+
+	color:#062525;
+
+	font-size:1.5rem;
+
+	font-weight:700;
+
+}
+
+.modal p{
+
+	margin:18px 0 10px;
+
+	color:#666;
+
+	font-size:15px;
+
+	line-height:1.7;
+
+}
+
+.warning{
+
+	color:#dc3545;
+
+	font-size:14px;
+
+	font-weight:600;
+
+}
+
+/* ================= Buttons ================= */
+
+.actions{
+
+	margin-top:28px;
+
+	display:flex;
+
+	gap:14px;
+
+}
+
+.cancelBtn,
+.deleteBtn{
+
+	flex:1;
+
+	height:48px;
+
+	border:none;
+
+	border-radius:14px;
+
+	cursor:pointer;
+
+	font-size:15px;
+
+	font-weight:600;
+
+	transition:
+		transform .3s ease,
+		background .3s ease,
+		box-shadow .3s ease;
+
+}
+
+.cancelBtn{
+
+	background:#eef2f4;
+
+	color:#555;
+
+}
+
+.cancelBtn:hover{
+
+	background:#dde5e8;
+
+	transform:translateY(-2px);
+
+}
+
+.deleteBtn{
+
+	background:#dc3545;
+
+	color:#ffffff;
+
+	box-shadow:0 10px 22px rgba(220,53,69,.25);
+
+}
+
+.deleteBtn:hover{
+
+	transform:translateY(-3px);
+
+	box-shadow:0 16px 30px rgba(220,53,69,.35);
+
+}
+
+/* ================= Animation ================= */
+
+@keyframes fadeIn{
+
+	from{opacity:0;}
+	to{opacity:1;}
+
+}
+
+@keyframes popUp{
+
+	from{
+		opacity:0;
+		transform:scale(.9);
+	}
+
+	to{
+		opacity:1;
+		transform:scale(1);
+	}
+
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width:576px){
+
+	.modal{
+		padding:28px 22px;
+	}
+
+	.actions{
+		flex-direction:column;
+	}
+
+}
+
+/* ================= Performance ================= */
+
+.modal,
+.cancelBtn,
+.deleteBtn{
+
+	will-change:transform;
+
+	backface-visibility:hidden;
+	-webkit-backface-visibility:hidden;
+
+}

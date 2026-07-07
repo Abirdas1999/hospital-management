@@ -1,0 +1,134 @@
+
+
+/* ================= Form ================= */
+
+.form {
+	padding: 28px;
+}
+
+/* ================= Grid ================= */
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 22px;
+}
+
+/* ================= Field ================= */
+
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.field label {
+	font-size: 14px;
+	font-weight: 600;
+	color: #062525;
+}
+
+.field input,
+.field select {
+	height: 50px;
+	padding: 0 16px;
+	border: 1px solid rgba(249,180,3,.20);
+	border-radius: 14px;
+	outline: none;
+	font-size: 15px;
+	background: #ffffff;
+	transition:
+		border-color .3s ease,
+		box-shadow .3s ease,
+		transform .25s ease;
+}
+
+.field input:focus,
+.field select:focus {
+	border-color: #f9b403;
+	transform: translateY(-2px);
+	box-shadow: 0 0 0 4px rgba(249,180,3,.12);
+}
+
+.field input::placeholder {
+	color: #9a9a9a;
+}
+
+/* ================= Actions ================= */
+
+.actions {
+	margin-top: 30px;
+	display: flex;
+	justify-content: flex-end;
+	gap: 14px;
+}
+
+.cancelBtn,
+.saveBtn {
+	min-width: 150px;
+	height: 50px;
+	border: none;
+	border-radius: 14px;
+	cursor: pointer;
+	font-size: 15px;
+	font-weight: 600;
+	transition:
+		transform .3s ease,
+		box-shadow .3s ease,
+		background .3s ease;
+}
+
+.cancelBtn {
+	background: #eef2f4;
+	color: #555;
+}
+
+.cancelBtn:hover {
+	background: #dfe6ea;
+	transform: translateY(-2px);
+}
+
+.saveBtn {
+	background: linear-gradient(135deg,#ffd54a,#f9b403,#e09f00);
+	color: #ffffff;
+	box-shadow: 0 10px 22px rgba(249,180,3,.30);
+}
+
+.saveBtn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 16px 30px rgba(249,180,3,.40);
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width: 768px) {
+	.form {
+		padding: 20px;
+	}
+
+	.grid {
+		grid-template-columns: 1fr;
+		gap: 18px;
+	}
+
+	.actions {
+		flex-direction: column-reverse;
+	}
+
+	.cancelBtn,
+	.saveBtn {
+		width: 100%;
+	}
+}
+
+/* ================= Performance ================= */
+
+.form,
+.field input,
+.field select,
+.cancelBtn,
+.saveBtn {
+	will-change: transform;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}

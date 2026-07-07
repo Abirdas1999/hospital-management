@@ -1,0 +1,53 @@
+/* ================= Layout ================= */
+
+.layout {
+	min-height: 100vh;
+
+	display: flex;
+
+	flex-direction: column;
+
+	background: #edf4f7;
+}
+
+/* ================= Body ================= */
+
+.body {
+	display: flex;
+
+	flex: 1;
+}
+
+/* ================= Main ================= */
+
+.main {
+	flex: 1;
+
+	padding: 30px;
+
+	background: linear-gradient(
+		180deg,
+		#f8fbfd 0%,
+		#edf4f7 100%
+	);
+
+	overflow-y: auto;
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width: 992px) {
+	.main {
+		padding: 24px;
+	}
+}
+
+@media (max-width: 768px) {
+	.body {
+		flex-direction: column;
+	}
+
+	.main {
+		padding: 18px;
+	}
+}

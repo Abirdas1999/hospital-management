@@ -1,0 +1,282 @@
+/* ================= Table Card ================= */
+
+.tableCard {
+
+	width: 100%;
+
+	background: #ffffff;
+
+	border-radius: 22px;
+
+	overflow: hidden;
+
+	border: 1px solid rgba(249, 180, 3, .15);
+
+	box-shadow:
+		0 18px 40px rgba(0, 0, 0, .06);
+
+	animation: fadeUp .45s ease;
+
+}
+
+/* ================= Table ================= */
+
+.table {
+
+	width: 100%;
+
+	border-collapse: collapse;
+
+}
+
+.table thead {
+
+	background: #062525;
+
+}
+
+.table th {
+
+	padding: 18px;
+
+	text-align: left;
+
+	color: #ffffff;
+
+	font-size: 15px;
+
+	font-weight: 600;
+
+}
+
+.table td {
+
+	padding: 18px;
+
+	color: #555;
+
+	font-size: 15px;
+
+	border-bottom: 1px solid #ececec;
+
+}
+
+.table tbody tr:nth-child(even) {
+
+	background: #fafafa;
+
+}
+
+.table tbody tr {
+
+	transition:
+		background .3s ease,
+		transform .3s ease;
+
+}
+
+.table tbody tr:hover {
+
+	background: #fffdf6;
+
+	transform: translateY(-2px);
+
+	box-shadow: inset 4px 0 #f9b403;
+
+}
+
+/* ================= Empty ================= */
+
+.empty {
+
+	padding: 50px !important;
+
+	text-align: center;
+
+	color: #8a8a8a;
+
+	font-size: 16px;
+
+	font-weight: 500;
+
+}
+
+/* ================= Status ================= */
+
+.active {
+
+	display: inline-flex;
+
+	align-items: center;
+
+	justify-content: center;
+
+	padding: 6px 14px;
+
+	border-radius: 30px;
+
+	background: #e9f9ef;
+
+	color: #1d8f4b;
+
+	font-size: 13px;
+
+	font-weight: 600;
+
+}
+
+.inactive {
+
+	display: inline-flex;
+
+	align-items: center;
+
+	justify-content: center;
+
+	padding: 6px 14px;
+
+	border-radius: 30px;
+
+	background: #fdecec;
+
+	color: #d64545;
+
+	font-size: 13px;
+
+	font-weight: 600;
+
+}
+
+/* ================= Actions ================= */
+
+.actionButtons {
+
+	display: flex;
+
+	align-items: center;
+
+	gap: 10px;
+
+}
+
+.editBtn,
+.deleteBtn {
+
+	width: 40px;
+
+	height: 40px;
+
+	border: none;
+
+	border-radius: 12px;
+
+	cursor: pointer;
+
+	display: flex;
+
+	justify-content: center;
+
+	align-items: center;
+
+	transition:
+		transform .25s ease,
+		background .25s ease,
+		box-shadow .25s ease;
+
+}
+
+.editBtn {
+
+	background: #eef8ff;
+
+	color: #0d6efd;
+
+}
+
+.editBtn:hover {
+
+	background: #0d6efd;
+
+	color: #ffffff;
+
+	transform: translateY(-3px);
+
+	box-shadow:
+		0 12px 24px rgba(13,110,253,.25);
+
+}
+
+.deleteBtn {
+
+	background: #fff1f1;
+
+	color: #dc3545;
+
+}
+
+.deleteBtn:hover {
+
+	background: #dc3545;
+
+	color: #ffffff;
+
+	transform: translateY(-3px);
+
+	box-shadow:
+		0 12px 24px rgba(220,53,69,.25);
+
+}
+
+/* ================= Animation ================= */
+
+@keyframes fadeUp {
+
+	from {
+
+		opacity: 0;
+
+		transform: translateY(10px);
+
+	}
+
+	to {
+
+		opacity: 1;
+
+		transform: translateY(0);
+
+	}
+
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width:768px) {
+
+	.tableCard {
+
+		overflow-x: auto;
+
+	}
+
+	.table {
+
+		min-width: 760px;
+
+	}
+
+}
+
+/* ================= Performance ================= */
+
+.tableCard,
+.editBtn,
+.deleteBtn {
+
+	will-change: transform;
+
+	backface-visibility: hidden;
+
+	-webkit-backface-visibility: hidden;
+
+}

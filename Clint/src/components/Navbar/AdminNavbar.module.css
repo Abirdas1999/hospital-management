@@ -1,0 +1,344 @@
+/* ================= Navbar ================= */
+
+.navbar {
+	position: sticky;
+	width: 100%;
+
+	top: 0;
+
+	z-index: 1100;
+
+	height: 82px;
+
+	padding: 0 35px;
+
+	display: flex;
+
+	justify-content: space-between;
+
+	align-items: center;
+
+	background: rgba(6, 37, 37, 0.96);
+
+	backdrop-filter: blur(18px);
+	-webkit-backdrop-filter: blur(18px);
+
+	border-bottom: 1px solid rgba(249, 180, 3, 0.18);
+
+	box-shadow:
+		0 10px 24px rgba(0, 0, 0, 0.18),
+		inset 0 -1px 0 rgba(249, 180, 3, 0.08);
+}
+
+/* ================= Left ================= */
+
+.left {
+	display: flex;
+
+	align-items: center;
+
+	gap: 18px;
+}
+
+/* ================= Logo ================= */
+
+.logo {
+	width: 58px;
+	height: 58px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	border-radius: 50%;
+
+	background: #ffffff;
+
+	border: 3px solid #f9b403;
+
+	text-decoration: none;
+
+	box-shadow: 0 8px 20px rgba(249, 180, 3, 0.35);
+
+	transition:
+		transform 0.35s ease,
+		box-shadow 0.35s ease;
+}
+
+.logo:hover {
+	transform: scale(1.08);
+
+	box-shadow: 0 15px 30px rgba(249, 180, 3, 0.45);
+}
+
+.logoPlaceholder {
+	font-size: 28px;
+}
+
+.logoImg {
+	width: 100%;
+
+	height: 100%;
+
+	object-fit: cover;
+}
+
+/* ================= Brand ================= */
+
+.brand {
+	display: flex;
+
+	flex-direction: column;
+}
+
+.brand h2 {
+	margin: 0;
+
+	color: #ffffff;
+
+	font-size: 1.25rem;
+
+	font-weight: 700;
+
+	letter-spacing: 0.4px;
+
+	transition: color 0.3s ease;
+}
+
+.brand span {
+	margin-top: 3px;
+
+	color: #b9c7c7;
+
+	font-size: 13px;
+
+	font-weight: 500;
+}
+
+/* ================= Right ================= */
+
+.right {
+	display: flex;
+
+	align-items: center;
+
+	gap: 22px;
+}
+
+/* ================= Notification ================= */
+
+.iconBtn {
+	position: relative;
+
+	width: 48px;
+	height: 48px;
+
+	border: none;
+
+	outline: none;
+
+	border-radius: 50%;
+
+	background: rgba(255, 255, 255, 0.08);
+
+	color: #ffffff;
+
+	cursor: pointer;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-size: 24px;
+
+	transition:
+		transform 0.3s ease,
+		background 0.3s ease,
+		box-shadow 0.3s ease;
+}
+
+.iconBtn:hover {
+	background: #f9b403;
+
+	color: #062525;
+
+	transform: translateY(-3px);
+
+	box-shadow: 0 10px 22px rgba(249, 180, 3, 0.35);
+}
+.iconBtn svg {
+	transition: transform 0.3s ease;
+}
+
+.iconBtn:hover svg {
+	transform: rotate(-15deg) scale(1.15);
+}
+
+.notification {
+	position: absolute;
+
+	top: 11px;
+	right: 11px;
+
+	width: 10px;
+	height: 10px;
+
+	border-radius: 50%;
+
+	background: #ff4d4f;
+
+	border: 2px solid #062525;
+
+	animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+
+		opacity: 1;
+	}
+
+	70% {
+		transform: scale(1.6);
+
+		opacity: 0.2;
+	}
+
+	100% {
+		transform: scale(1);
+
+		opacity: 1;
+	}
+}
+
+/* ================= Profile ================= */
+
+.profile {
+	display: flex;
+
+	align-items: center;
+
+	gap: 14px;
+
+	padding: 8px 14px;
+
+	border-radius: 16px;
+
+	cursor: pointer;
+
+	transition:
+		background 0.3s ease,
+		transform 0.3s ease;
+}
+
+.profile:hover {
+	background: rgba(249, 180, 3, 0.08);
+
+	transform: translateY(-2px) scale(1.02);
+}
+
+.avatar {
+	width: 50px;
+	height: 50px;
+
+	border-radius: 50%;
+
+	background: linear-gradient(135deg, #ffd54a, #f9b403, #e09f00);
+
+	color: #062525;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-size: 34px;
+
+	box-shadow: 0 8px 20px rgba(249, 180, 3, 0.35);
+
+	transition: transform 0.3s ease;
+}
+
+.profile:hover .avatar {
+	transform: scale(1.08);
+}
+
+.userInfo {
+	display: flex;
+
+	flex-direction: column;
+}
+
+
+.logo:hover + .brand h2 {
+	color: #f9b403;
+}
+
+.logo,
+.iconBtn,
+.profile,
+.avatar {
+	will-change: transform;
+
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+
+.userInfo h4 {
+	margin: 0;
+
+	color: #ffffff;
+
+	font-size: 15px;
+
+	font-weight: 600;
+}
+
+.userInfo span {
+	margin-top: 2px;
+
+	color: #b9c7c7;
+
+	font-size: 13px;
+}
+
+.arrow {
+	color: #f9b403;
+
+	font-size: 22px;
+
+	transition: transform 0.3s ease;
+}
+
+.profile:hover .arrow {
+	transform: rotate(180deg);
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width: 768px) {
+	.navbar {
+		padding: 0 18px;
+
+		height: 74px;
+	}
+
+	.brand {
+		display: none;
+	}
+
+	.userInfo {
+		display: none;
+	}
+
+	.profile {
+		padding: 0;
+	}
+
+	.avatar {
+		width: 44px;
+		height: 44px;
+
+		font-size: 30px;
+	}
+}

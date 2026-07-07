@@ -1,0 +1,693 @@
+/* ================= Navbar ================= */
+
+.customNavbar {
+
+	position: sticky;
+
+	top: 0;
+
+	z-index: 1000;
+
+	background: rgba(6, 37, 37, .95);
+
+	backdrop-filter: blur(18px);
+	-webkit-backdrop-filter: blur(18px);
+
+	border-bottom: 1px solid rgba(249,180,3,.22);
+
+	padding: 16px 0 !important;
+
+	box-shadow:
+		0 8px 24px rgba(0,0,0,.18),
+		inset 0 -1px 0 rgba(249,180,3,.08);
+
+}
+
+/* ================= Logo ================= */
+
+.logo{
+
+	width:60px;
+	height:60px;
+
+	display:flex;
+	justify-content:center;
+	align-items:center;
+
+	border-radius:50%;
+
+	background:#ffffff;
+
+	border:3px solid #f9b403;
+
+	text-decoration:none;
+
+	flex-shrink:0;
+
+	box-shadow:
+		0 8px 20px rgba(249,180,3,.35);
+
+	transition:
+		transform .3s ease,
+		box-shadow .3s ease;
+
+}
+
+.logo:hover{
+
+	transform:scale(1.08);
+
+	box-shadow:
+		0 14px 30px rgba(249,180,3,.45);
+
+}
+
+.logoPlaceholder{
+
+	font-size:28px;
+
+}
+
+.logoImg{
+
+	width:100%;
+	height:100%;
+
+	object-fit:cover;
+
+}
+
+/* ================= Desktop Navigation ================= */
+
+.navMenu{
+
+	display:flex;
+
+	align-items:center;
+
+	margin-left:auto;
+
+}
+
+.navLink{
+
+	position:relative;
+
+	margin-left:26px;
+
+	text-decoration:none;
+
+	font-family:"Poppins",sans-serif;
+
+	font-size:16px;
+
+	font-weight:500;
+
+	color:#f3f4f6 !important;
+
+	transition:
+		color .3s ease;
+
+}
+
+.navLink:hover{
+
+	color:#f9b403 !important;
+
+}
+
+.navLink::after{
+
+	content:"";
+
+	position:absolute;
+
+	left:0;
+
+	bottom:-7px;
+
+	width:0;
+
+	height:2px;
+
+	border-radius:30px;
+
+	background:#f9b403;
+
+	transition:width .3s ease;
+
+}
+
+.navLink:hover::after{
+
+	width:100%;
+
+}
+
+/* ================= Hidden on Desktop ================= */
+
+.menuBtn,
+.mobileBtn,
+.menuOverlay{
+
+	display:none;
+
+}
+
+/* ================= Mobile Toggle ================= */
+
+.menuBtn{
+
+	width:48px;
+	height:48px;
+
+	border:none;
+	outline:none;
+
+	background:transparent;
+
+	cursor:pointer;
+
+	padding:0;
+
+	position:relative;
+
+	align-items:center;
+	justify-content:center;
+
+	z-index:1100;
+
+}
+
+.bar{
+
+	position:absolute;
+
+	width:28px;
+	height:3px;
+
+	background:#ffffff;
+
+	border-radius:30px;
+
+	transition:
+		transform .35s cubic-bezier(.68,-0.55,.27,1.55),
+		opacity .25s ease,
+		background .25s ease;
+
+}
+
+.bar:nth-child(1){
+
+	transform:translateY(-8px);
+
+}
+
+.bar:nth-child(2){
+
+	transform:translateY(0);
+
+}
+
+.bar:nth-child(3){
+
+	transform:translateY(8px);
+
+}
+
+/* ================= Hamburger Animation ================= */
+
+.open .bar:nth-child(1){
+
+	transform:rotate(45deg);
+
+}
+
+.open .bar:nth-child(2){
+
+	opacity:0;
+
+	transform:scaleX(0);
+
+}
+
+.open .bar:nth-child(3){
+
+	transform:rotate(-45deg);
+
+}
+
+/* ================= Overlay ================= */
+
+.menuOverlay{
+
+	position:fixed;
+
+	inset:0;
+
+	background:rgba(0,0,0,.45);
+
+	backdrop-filter:blur(6px);
+	-webkit-backdrop-filter:blur(6px);
+
+	opacity:0;
+
+	visibility:hidden;
+
+	pointer-events:none;
+
+	transition:.35s ease;
+
+	z-index:998;
+
+}
+
+.menuOverlayOpen{
+
+	display:block;
+
+	opacity:1;
+
+	visibility:visible;
+
+	pointer-events:auto;
+
+}
+
+/* ================= Mobile Login Button ================= */
+
+.mobileBtn{
+
+	display:none;
+
+	align-items:center;
+	justify-content:center;
+
+	gap:10px;
+
+	width:100%;
+	height:50px;
+
+	margin-top:18px;
+
+	text-decoration:none;
+
+	border-radius:14px;
+
+	color:#ffffff;
+
+	font-family:"Poppins",sans-serif;
+	font-size:16px;
+	font-weight:600;
+
+	background:linear-gradient(
+		135deg,
+		#ffd54a 0%,
+		#f9b403 60%,
+		#e09f00 100%
+	);
+
+	box-shadow:
+		0 10px 22px rgba(249,180,3,.30);
+
+	transition:
+		transform .3s ease,
+		box-shadow .3s ease;
+
+}
+
+.mobileBtn:hover{
+
+	transform:translateY(-3px);
+
+	box-shadow:
+		0 18px 34px rgba(249,180,3,.42);
+
+}
+
+.mobileBtn svg{
+
+	font-size:20px;
+
+}
+/* ================= Responsive ================= */
+@media (max-width:991px){
+    	.customNavbar{
+
+		padding:14px 0 !important;
+
+		position:relative;
+
+	}
+
+	.logo{
+
+		width:54px;
+		height:54px;
+
+	}
+
+	.logoPlaceholder{
+
+		font-size:24px;
+
+	}
+
+	/* ================= Hamburger ================= */
+
+	.menuBtn{
+
+		display:flex;
+
+	}
+
+	/* ================= Overlay ================= */
+
+	.menuOverlay{
+
+		display:block;
+
+	}
+
+	/* ================= Mobile Menu ================= */
+
+	.navMenu{
+
+		position:absolute;
+
+		top:calc(100% + 14px);
+
+		left:50%;
+
+		transform:
+			translateX(-50%)
+			translateY(-12px)
+			scale(.96);
+
+		width:92%;
+
+		margin:0;
+
+		padding:0 22px;
+
+		display:flex;
+
+		flex-direction:column;
+
+		align-items:center;
+
+		background:rgba(6,37,37,.98);
+
+		backdrop-filter:blur(20px);
+		-webkit-backdrop-filter:blur(20px);
+
+		border:1px solid rgba(249,180,3,.18);
+
+		border-radius:22px;
+
+		box-shadow:
+			0 20px 45px rgba(0,0,0,.35);
+
+		max-height:0;
+
+		overflow:hidden;
+
+		opacity:0;
+
+		visibility:hidden;
+
+		pointer-events:none;
+
+		transition:
+			transform .35s ease,
+			opacity .35s ease,
+			max-height .35s ease,
+			padding .35s ease;
+
+		z-index:999;
+
+	}
+
+	.navMenuOpen{
+
+		transform:
+			translateX(-50%)
+			translateY(0)
+			scale(1);
+
+		max-height:550px;
+
+		padding:24px;
+
+		opacity:1;
+
+		visibility:visible;
+
+		pointer-events:auto;
+
+	}
+    	/* ================= Mobile Navigation ================= */
+
+	.navLink{
+
+		width:100%;
+
+		margin:0;
+
+		padding:16px 20px;
+
+		text-align:center;
+
+		font-size:17px;
+
+		font-weight:500;
+
+		color:#f3f4f6 !important;
+
+		border-bottom:1px solid rgba(255,255,255,.08);
+
+		border-radius:14px;
+
+		opacity:0;
+
+		transform:translateY(-10px);
+
+		transition:
+			transform .32s cubic-bezier(.22,1,.36,1),
+			background .28s ease,
+			color .28s ease,
+			box-shadow .28s ease,
+			padding-left .28s ease,
+			opacity .35s ease;
+
+	}
+
+	.navMenuOpen .navLink{
+
+		opacity:1;
+
+		transform:translateY(0);
+
+	}
+
+	/* Premium Hover */
+
+	.navLink:hover{
+
+		color:#f9b403 !important;
+
+		background:rgba(249,180,3,.08);
+
+		transform:
+			translateY(-4px)
+			translateX(8px)
+			scale(1.02);
+
+		box-shadow:
+			0 8px 18px rgba(249,180,3,.12),
+			inset 4px 0 #f9b403;
+
+	}
+
+	.navLink:active{
+
+		transform:
+			translateY(-1px)
+			translateX(4px)
+			scale(.98);
+
+	}
+
+	.navLink:last-of-type{
+
+		border-bottom:none;
+
+	}
+
+	.navLink::after{
+
+		display:none;
+
+	}
+
+	/* Stagger Animation */
+
+	.navMenuOpen .navLink:nth-child(1){
+
+		transition-delay:.05s;
+
+	}
+
+	.navMenuOpen .navLink:nth-child(2){
+
+		transition-delay:.10s;
+
+	}
+
+	.navMenuOpen .navLink:nth-child(3){
+
+		transition-delay:.15s;
+
+	}
+
+	.navMenuOpen .navLink:nth-child(4){
+
+		transition-delay:.20s;
+
+	}
+
+	.navMenuOpen .navLink:nth-child(5){
+
+		transition-delay:.25s;
+
+	}
+
+	.mobileBtn{
+
+		display:flex;
+
+	}
+}
+/* ================= Desktop Reset ================= */
+
+@media (min-width:992px){
+
+	.menuBtn{
+
+		display:none;
+
+	}
+
+	.menuOverlay{
+
+		display:none !important;
+
+	}
+
+	.mobileBtn{
+
+		display:none !important;
+
+	}
+
+	.navMenu{
+
+		position:static;
+
+		display:flex;
+
+		flex-direction:row;
+
+		align-items:center;
+
+		margin-left:auto;
+
+		width:auto;
+
+		padding:0;
+
+		background:transparent;
+
+		border:none;
+
+		border-radius:0;
+
+		box-shadow:none;
+
+		backdrop-filter:none;
+		-webkit-backdrop-filter:none;
+
+		max-height:none;
+
+		overflow:visible;
+
+		opacity:1;
+
+		visibility:visible;
+
+		pointer-events:auto;
+
+		transform:none;
+
+	}
+
+	.navLink{
+
+		width:auto;
+
+		margin-left:26px;
+
+		padding:0;
+
+		border:none;
+
+		border-radius:0;
+
+		opacity:1;
+
+		transform:none;
+
+		font-size:16px;
+
+		background:transparent;
+
+		box-shadow:none;
+
+		color:#f3f4f6 !important;
+
+	}
+
+	.navLink:hover{
+
+		background:transparent;
+
+		color:#f9b403 !important;
+
+		transform:none;
+
+		box-shadow:none;
+
+	}
+
+	.navLink::after{
+
+		display:block;
+
+	}
+
+}
+
+/* ================= Performance ================= */
+
+.navMenu,
+.navLink,
+.menuBtn,
+.bar,
+.mobileBtn{
+
+	will-change:transform;
+
+	backface-visibility:hidden;
+	-webkit-backface-visibility:hidden;
+
+}

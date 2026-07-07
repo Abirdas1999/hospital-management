@@ -1,0 +1,50 @@
+/* ================= Layout ================= */
+
+.layout {
+
+	min-height: 100vh;
+
+	display: flex;
+
+	flex-direction: column;
+
+	background: #ffffff;
+
+}
+
+/* ================= Main ================= */
+
+.main {
+
+	flex: 1;
+
+	width: 100%;
+
+	overflow-x: hidden;
+
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width: 768px) {
+
+	.main {
+
+		width: 100%;
+
+	}
+
+}
+
+/* ================= Performance ================= */
+
+.layout,
+.main {
+
+	will-change: transform;
+
+	backface-visibility: hidden;
+
+	-webkit-backface-visibility: hidden;
+
+}
